@@ -1,15 +1,11 @@
 import csv
 import cv2
-
-import pytesseract
-from PIL import Image
-# pytesseract.pytesseract.tesseract_cmd = 'C:/Program Files (x86)/Tesseract-OCR/tesseract'
-print(pytesseract.image_to_string(Image.open('../data/Typical Form Example1.png')))
-
 from pytesseract import pytesseract as pt
+
 # img_path = '../data/Typical Form Example1.png'
-img_path = '../data/Filled Example Form 1 with handwriting.jpg'
 # img_path = '../data/test.png'
+img_path = '../data/Filled Example Form 1 with handwriting.jpg'
+
 
 pt.run_tesseract(img_path, 'output', lang=None, boxes=True, config='hocr')
 boxes = []
